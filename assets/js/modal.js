@@ -1,21 +1,15 @@
-let modal = document.getElementById('myModal')
+const modal = document.getElementById('myModal')
 
-let btn = document.getElementById('addBookBtn')
+const btn = document.getElementById('addBookBtn')
 
-let span = document.getElementsByClassName('close')[0]
-
-console.log(modal)
-console.log(btn)
-console.log(span)
+const span = document.getElementsByClassName('close')[0]
 
 btn.onclick = () => {
-  modal.style.display = 'block'
-  console.log('open')
+  modal.classList.add('show')
 }
 
 span.onclick = () => {
-  modal.style.display = 'none'
-  console.log('close')
+  modal.classList.remove('show')
 }
 
 window.onclick = (event) => {

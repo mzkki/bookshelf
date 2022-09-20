@@ -10,11 +10,13 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
 }
+.custom-modal.show {
+  display: block;
+}
 .modal-content {
   background-color: aliceblue;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
   width: 80%;
   border-radius: 10px;
 }
