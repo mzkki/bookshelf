@@ -36,6 +36,7 @@
             placeholder="Title"
           />
           <label for="bookTitle">Title</label>
+          <div id="validationTitle"></div>
         </div>
         <div class="form-floating my-1">
           <input
@@ -45,6 +46,7 @@
             placeholder="Author"
           />
           <label for="bookAuthor">Author</label>
+          <div id="validationAuthor"></div>
         </div>
         <div class="form-floating my-1">
           <input
@@ -54,6 +56,7 @@
             placeholder="Year"
           />
           <label for="bookYear">Year</label>
+          <div id="validationYear"></div>
         </div>
         <div class="form-check my-2 mx-2">
           <input
@@ -74,94 +77,78 @@
     <div class="container mt-5">
       <button id="addBookBtn" class="btn btn-primary">Add Book</button>
       <div class="row my-3">
-        <div class="col-sm-6">
+        <div class="col-md-6">
           <div class="card border-0 shadow p-3 my-3">
             <div class="card-body">
               <h5 class="card-title">Unreadlist book</h5>
               <h6 class="card-subtitle mb-2 text-muted">
                 This section is for unread book
               </h6>
-              <div class="p-3 shadow-sm my-3">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <h5>test</h5>
-                    <p class="text-muted fs-6">test 1945</p>
-                  </div>
-                  <div class="col-sm-3 align-self-center text-end">
-                    <i class="fa-solid fa-check m-2 text-success"></i>
-                    <i class="fa-solid fa-circle-minus m-2 text-danger"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="p-3 shadow-sm my-3">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <h5>test</h5>
-                    <p class="text-muted fs-6">test 1945</p>
-                  </div>
-                  <div class="col-sm-3 align-self-center text-end">
-                    <i class="fa-solid fa-check m-2 text-success"></i>
-                    <i class="fa-solid fa-circle-minus m-2 text-danger"></i>
+              <div id="books" class="list-book">
+                <!-- // -->
+                <div class="p-3 shadow-sm rounded my-3">
+                  <div class="row">
+                    <div class="col-sm-9">
+                      <h5>test</h5>
+                      <p class="text-muted fs-6">test 1945</p>
+                    </div>
+                    <div class="col-sm-3 align-self-center text-end">
+                      <i class="fa-solid fa-check m-2 text-success"></i>
+                      <i class="fa-solid fa-circle-minus m-2 text-danger"></i>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="p-3 shadow-sm my-3">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <h5>test</h5>
-                    <p class="text-muted fs-6">test 1945</p>
-                  </div>
-                  <div class="col-sm-3 align-self-center text-end">
-                    <i class="fa-solid fa-check m-2 text-success"></i>
-                    <i class="fa-solid fa-circle-minus m-2 text-danger"></i>
+                <div class="p-3 shadow-sm rounded my-3">
+                  <div class="row">
+                    <div class="col-sm-9">
+                      <h5>test</h5>
+                      <p class="text-muted fs-6">test 1945</p>
+                    </div>
+                    <div class="col-sm-3 align-self-center text-end">
+                      <i class="fa-solid fa-check m-2 text-success"></i>
+                      <i class="fa-solid fa-circle-minus m-2 text-danger"></i>
+                    </div>
                   </div>
                 </div>
+                <div class="p-3 shadow-sm rounded my-3">
+                  <div class="row">
+                    <div class="col-sm-9">
+                      <h5>test</h5>
+                      <p class="text-muted fs-6">test 1945</p>
+                    </div>
+                    <div class="col-sm-3 align-self-center text-end">
+                      <i class="fa-solid fa-check m-2 text-success"></i>
+                      <i class="fa-solid fa-circle-minus m-2 text-danger"></i>
+                    </div>
+                  </div>
+                </div>
+                <!-- // -->
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-md-6">
           <div class="card border-0 shadow p-3 my-3">
             <div class="card-body">
               <h5 class="card-title">Readlist book</h5>
               <h6 class="card-subtitle mb-2 text-muted">
                 This section is for read book
               </h6>
-              <div class="p-3 shadow-sm my-3">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <h5>test</h5>
-                    <p class="text-muted fs-6">test 1945</p>
-                  </div>
-                  <div class="col-sm-3 align-self-center text-end">
-                    <i class="fa-solid fa-check m-2 text-success"></i>
-                    <i class="fa-solid fa-circle-minus m-2 text-danger"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="p-3 shadow-sm my-3">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <h5>test</h5>
-                    <p class="text-muted fs-6">test 1945</p>
-                  </div>
-                  <div class="col-sm-3 align-self-center text-end">
-                    <i class="fa-solid fa-check m-2 text-success"></i>
-                    <i class="fa-solid fa-circle-minus m-2 text-danger"></i>
+              <div id="completedBooks" class="list-books">
+                <!-- // -->
+                <div class="p-3 shadow-sm rounded my-3">
+                  <div class="row">
+                    <div class="col-sm-9">
+                      <h5>test</h5>
+                      <p class="text-muted fs-6">test 1945</p>
+                    </div>
+                    <div class="col-sm-3 align-self-center text-end">
+                      <i class="fa-solid fa-check m-2 text-success"></i>
+                      <i class="fa-solid fa-rotate-left m-2 text-warning"></i>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="p-3 shadow-sm my-3">
-                <div class="row">
-                  <div class="col-sm-9">
-                    <h5>test</h5>
-                    <p class="text-muted fs-6">test 1945</p>
-                  </div>
-                  <div class="col-sm-3 align-self-center text-end">
-                    <i class="fa-solid fa-check m-2 text-success"></i>
-                    <i class="fa-solid fa-circle-minus m-2 text-danger"></i>
-                  </div>
-                </div>
+                <!-- // -->
               </div>
             </div>
           </div>
