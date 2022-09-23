@@ -120,7 +120,7 @@ const makeBook = (objBook) => {
     check.classList.add('fa-solid', 'fa-check', 'm-2', 'text-success')
 
     check.onclick = () => {
-      completeBook(objBook.id)
+      moveToComplete(objBook.id)
     }
     const trash = document.createElement('i')
     trash.classList.add('fa-solid', 'fa-circle-minus', 'm-2', 'text-danger')
@@ -135,4 +135,55 @@ const makeBook = (objBook) => {
 
     buttonContainer.append(check, trash)
   }
+
+  const moveToComplete = (bookId) => {
+    const bookTarget = findBook(bookId)
+
+    if (bookTarget == null) return
+
+    bookTarget.isComplete = true
+    document.dispatchEvent(new Event(RENDER_EVENT))
+  }
+
+  const findBook = (bookId) => {
+    for (const book of books) {
+      if (book.id === bookId) {
+        return book
+      }
+    }
+    return null
+  }
+
+  const deleteBook = (bookId) => {
+    const bookTarget = findBookIndex(bookId)
+
+    if (bookTarget == -1) return
+
+    books.splice(bookTarget, 1)
+    document.dispatchEvent(new Event(RENDER_EVENT))
+  }
+
+  const undoBook = (bookId) => {
+    const bookTarget = findBook(bookId)
+
+    if (bookTarget == null) return
+
+    bookTarget.isComplete = true
+    document.dispatchEvent(new Event(RENDER_EVENT))
+  }
+
+  const findBookIndex = (bookId) => {
+    for (const index in books) {
+      if (books[index].id === bookId) {
+        return index
+      }
+    }
+    return -1
+  }
+
+  rowContainer.append(colContainer, buttonContainer)
+  container.append(rowContainer)
+  container.setAttribute('id', `book-${objBook.id}`)
+
+  return container
 }
