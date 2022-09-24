@@ -65,6 +65,8 @@ const addBook = () => {
 
     document.dispatchEvent(new Event(RENDER_EVENT))
   }
+
+  this.title.value = 'nothing here'
 }
 
 const makeBook = (objBook) => {
