@@ -1,11 +1,6 @@
 const books = []
 const RENDER_EVENT = 'render_event'
 
-const addBtn = document.getElementById('buttonInput')
-addBtn.addEventListener('click', () => {
-  addBook()
-})
-
 document.addEventListener(RENDER_EVENT, () => {
   const unCompletedBooks = document.getElementById('books')
   unCompletedBooks.innerHTML = ''
@@ -168,7 +163,7 @@ const makeBook = (objBook) => {
 
     if (bookTarget == null) return
 
-    bookTarget.isComplete = true
+    bookTarget.isComplete = false
     document.dispatchEvent(new Event(RENDER_EVENT))
   }
 
