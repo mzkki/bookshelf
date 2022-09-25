@@ -1,24 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Comic Neue', sans-serif;
 }
-#snackbar {
+#customalert {
   visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #368754;
-  color: #fff;
+  min-width: 400px;
+  margin-left: -200px;
+  background-color: white;
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+  color: black;
   text-align: center;
-  border-radius: 100px;
+  border-radius: 10px;
   padding: 16px;
   position: fixed;
-  z-index: 1;
+  z-index: 7;
   left: 50%;
-  bottom: 100px;
+  top: 70px;
   font-size: 17px;
 }
 
-#snackbar.show {
+#customalert.show {
   visibility: visible;
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -26,43 +27,51 @@
 
 @-webkit-keyframes fadein {
   from {
-    bottom: 0;
+    min-width: 0;
+    top: 0;
     opacity: 0;
   }
   to {
-    bottom: 100px;
+    min-width: 400px;
+    top: 70px;
     opacity: 1;
   }
 }
 @keyframes fadein {
   from {
-    bottom: 0;
+    min-width: 0;
+    top: 0;
     opacity: 0;
   }
   to {
-    bottom: 100px;
+    min-width: 400px;
+    top: 70px;
     opacity: 1;
   }
 }
 
 @-webkit-keyframes fadeout {
   from {
-    bottom: 100px;
+    min-width: 400px;
+    top: 70px;
     opacity: 1;
   }
   to {
-    bottom: 0;
+    min-width: 0;
+    top: 0;
     opacity: 0;
   }
 }
 
 @keyframes fadeout {
   from {
-    bottom: 100px;
+    min-width: 400px;
+    top: 70px;
     opacity: 1;
   }
   to {
-    bottom: 0;
+    min-width: 0;
+    top: 0;
     opacity: 0;
   }
 }

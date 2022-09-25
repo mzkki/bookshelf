@@ -12,7 +12,6 @@ const saveData = (action) => {
   if (isStorageExist()) {
     const parsed = JSON.stringify(books)
     localStorage.setItem(STORAGE_KEY, parsed)
-    console.log(action)
     notifyChange(action)
   }
 }

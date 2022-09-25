@@ -65,7 +65,7 @@ const addBook = () => {
     books.push(objBook)
 
     document.dispatchEvent(new Event(RENDER_EVENT))
-    saveData('Add some book')
+    saveData('add some book')
     modal.classList.remove('show')
     title.value = ''
     author.value = ''
@@ -201,7 +201,7 @@ const searchBook = () => {
 }
 
 const notifyChange = (action) => {
-  const x = document.getElementById('snackbar')
+  const x = document.getElementById('customalert')
   x.innerText = `Success ${action}`
   x.className = 'show'
   setTimeout(() => {
