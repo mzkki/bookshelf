@@ -79,9 +79,10 @@ const makeBook = (objBook) => {
   bookTitle.innerText = objBook.title
 
   const authorYear = document.createElement('p')
-  authorYear.classList.add('text-muted', 'fs-6')
-  authorYear.innerText = objBook.author
-  authorYear.innerText += '-'
+  authorYear.classList.add('text-muted')
+  authorYear.innerText = 'Writen by '
+  authorYear.innerText += objBook.author
+  authorYear.innerText += ' released on '
   authorYear.innerText += objBook.year
 
   const colContainer = document.createElement('div')
@@ -109,11 +110,7 @@ const makeBook = (objBook) => {
     trash.classList.add('fa-solid', 'fa-circle-minus', 'm-2', 'text-danger')
 
     trash.onclick = () => {
-      confirm(
-        'are you sure want to delete the book ?'
-          ? deleteBook(objBook.id)
-          : false,
-      )
+      confirm('Are you sure want to delete the book ?') ? deleteBook(objBook.id) : false
     }
 
     buttonContainer.append(undo, trash)
@@ -128,11 +125,7 @@ const makeBook = (objBook) => {
     trash.classList.add('fa-solid', 'fa-circle-minus', 'm-2', 'text-danger')
 
     trash.onclick = () => {
-      confirm(
-        'are you sure want to delete the book ?'
-          ? deleteBook(objBook.id)
-          : false,
-      )
+      confirm('Are you sure want to delete the book ?') ? deleteBook(objBook.id) : false
     }
 
     buttonContainer.append(check, trash)
