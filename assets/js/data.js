@@ -6,18 +6,16 @@ const generateObj = (id, title, author, year, isComplete) => {
   return { id, title, author, year, isComplete }
 }
 
-const EVENT_SAVED = 'SAVED_BOOK'
 const STORAGE_KEY = 'BOOK_APPS'
 
-const saveData = () => {
+const saveData = (action) => {
   if (isStorageExist()) {
     const parsed = JSON.stringify(books)
     localStorage.setItem(STORAGE_KEY, parsed)
-    document.dispatchEvent(new Event(EVENT_SAVED))
-    console.log('berhasil memasukkan data ke web storage')
+    console.log(action)
+    notifyChange(action)
   }
 }
-
 const isStorageExist = () => {
   if (typeof (Storage) === undefined) {
     alert('Your Browser does not support the web storage')

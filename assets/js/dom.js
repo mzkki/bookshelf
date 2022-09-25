@@ -65,7 +65,7 @@ const addBook = () => {
     books.push(objBook)
 
     document.dispatchEvent(new Event(RENDER_EVENT))
-    saveData()
+    saveData('Add some book')
     modal.classList.remove('show')
     title.value = ''
     author.value = ''
@@ -80,7 +80,7 @@ const makeBook = (objBook) => {
 
   const authorYear = document.createElement('p')
   authorYear.classList.add('text-muted')
-  authorYear.innerText = 'Writen by '
+  authorYear.innerText = 'Written by '
   authorYear.innerText += objBook.author
   authorYear.innerText += ' released on '
   authorYear.innerText += objBook.year
@@ -138,7 +138,7 @@ const makeBook = (objBook) => {
 
     bookTarget.isComplete = true
     document.dispatchEvent(new Event(RENDER_EVENT))
-    saveData()
+    saveData('read book')
   }
 
   const findBook = (bookId) => {
@@ -157,7 +157,7 @@ const makeBook = (objBook) => {
 
     books.splice(bookTarget, 1)
     document.dispatchEvent(new Event(RENDER_EVENT))
-    saveData()
+    saveData('delete book')
   }
 
   const undoBook = (bookId) => {
@@ -167,7 +167,7 @@ const makeBook = (objBook) => {
 
     bookTarget.isComplete = false
     document.dispatchEvent(new Event(RENDER_EVENT))
-    saveData()
+    saveData('undo book')
   }
 
   const findBookIndex = (bookId) => {
@@ -198,4 +198,13 @@ const searchBook = () => {
       bookItem[i].style.display = 'none'
     }
   }
+}
+
+const notifyChange = (action) => {
+  const x = document.getElementById('snackbar')
+  x.innerText = `Success ${action}`
+  x.className = 'show'
+  setTimeout(() => {
+    x.className = x.className.replace('show', '')
+  }, 3000)
 }
