@@ -23,7 +23,7 @@ document.addEventListener(RENDER_EVENT, () => {
     nullBooks.innerText = 'Add some book to readlist'
     unCompletedBooks.append(nullBooks)
   } else {
-    nullBooks.innerText = 'Great, no books are in readlist'
+    nullBooks.innerText = 'Go !, complete your readlist'
     completedBooks.append(nullBooks)
   }
 })
@@ -65,6 +65,7 @@ const addBook = () => {
     books.push(objBook)
 
     document.dispatchEvent(new Event(RENDER_EVENT))
+    saveData()
     modal.classList.remove('show')
     title.value = ''
     author.value = ''
@@ -144,6 +145,7 @@ const makeBook = (objBook) => {
 
     bookTarget.isComplete = true
     document.dispatchEvent(new Event(RENDER_EVENT))
+    saveData()
   }
 
   const findBook = (bookId) => {
@@ -162,6 +164,7 @@ const makeBook = (objBook) => {
 
     books.splice(bookTarget, 1)
     document.dispatchEvent(new Event(RENDER_EVENT))
+    saveData()
   }
 
   const undoBook = (bookId) => {
@@ -171,6 +174,7 @@ const makeBook = (objBook) => {
 
     bookTarget.isComplete = false
     document.dispatchEvent(new Event(RENDER_EVENT))
+    saveData()
   }
 
   const findBookIndex = (bookId) => {
