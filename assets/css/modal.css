@@ -17,7 +17,7 @@
   background-color: aliceblue;
   margin: auto;
   padding: 20px;
-  width: 80%;
+  width: 35%;
   border-radius: 10px;
 }
 .close {
@@ -31,4 +31,10 @@
   color: red;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .modal-content {
+    width: 80%;
+  }
 }

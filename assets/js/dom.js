@@ -29,10 +29,11 @@ document.addEventListener(RENDER_EVENT, () => {
 })
 
 const addBook = () => {
-  const title = document.getElementById('bookTitle').value
-  const author = document.getElementById('bookAuthor').value
-  const year = document.getElementById('bookYear').value
-  const isComplete = document.getElementById('isCompleted').checked
+  const title = document.getElementById('bookTitle')
+  const author = document.getElementById('bookAuthor')
+  const year = document.getElementById('bookYear')
+  const isComplete = document.getElementById('isCompleted')
+  const modal = document.getElementById('myModal')
 
   const validationTitle = document.getElementById('validationTitle')
   validationTitle.innerHTML = ''
@@ -44,29 +45,32 @@ const addBook = () => {
   const validator = document.createElement('p')
   validator.classList.add('text-danger', 'm-2', 'fs-6')
 
-  if (title == '' || author == '' || year == '') {
-    if (title == '') {
+  if (title.value == '' || author.value == '' || year.value == '') {
+    if (title.value == '') {
       validator.innerHTML =
         '<i class="fa-solid fa-circle-info"></i> Field Title is required !'
       validationTitle.append(validator)
-    } else if (author == '') {
+    } else if (author.value == '') {
       validator.innerHTML =
         '<i class="fa-solid fa-circle-info"></i> Field Author is required !'
       validationAuthor.append(validator)
-    } else if (year == '') {
+    } else if (year.value == '') {
       validator.innerHTML =
         '<i class="fa-solid fa-circle-info"></i> Field Year is required !'
       validationYear.append(validator)
     }
   } else {
     const idBook = generateId()
-    const objBook = generateObj(idBook, title, author, year, isComplete)
+    const objBook = generateObj(idBook, title.value, author.value, year.value, isComplete.checked)
     books.push(objBook)
 
     document.dispatchEvent(new Event(RENDER_EVENT))
+    modal.classList.remove('show')
+    title.value = ''
+    author.value = ''
+    year.value = ''
+    isComplete.checked = false
   }
-
-  this.title.value = 'nothing here'
 }
 
 const makeBook = (objBook) => {

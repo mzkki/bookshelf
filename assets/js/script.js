@@ -1,6 +1,6 @@
-const addButton = document.getElementById('buttonInput')
+const addButton = document.getElementById('addBook')
 
-addButton.onclick = (event) => {
+addButton.onsubmit = (event) => {
   event.preventDefault()
   addBook()
 }
