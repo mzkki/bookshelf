@@ -83,7 +83,19 @@
       </form>
     </div>
     <div class="container mt-5">
-      <button id="addBookBtn" class="btn btn-primary">Add Book</button>
+      <button id="addBookBtn" class="btn btn-primary col-12 mb-3">
+        Add Book
+      </button>
+      <div class="input-group mb-2">
+        <input
+          type="text"
+          class="form-control"
+          id="searchBook"
+          placeholder="Title, Author, or Year"
+          autocomplete="off"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </div>
       <div class="row my-3">
         <div class="col-md-6">
           <div class="card border-0 shadow p-3 my-3">
@@ -92,7 +104,7 @@
               <h6 class="card-subtitle mb-2 text-muted">
                 This section is for unread book
               </h6>
-              <div id="books" class="list-book"></div>
+              <div id="books" class="list-books"></div>
             </div>
           </div>
         </div>

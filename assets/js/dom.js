@@ -92,7 +92,7 @@ const makeBook = (objBook) => {
   rowContainer.classList.add('row')
 
   const container = document.createElement('div')
-  container.classList.add('p-3', 'shadow-sm', 'rounded', 'my-3')
+  container.classList.add('p-3', 'shadow-sm', 'rounded', 'my-3', 'item-book')
 
   const buttonContainer = document.createElement('div')
   buttonContainer.classList.add('col-3', 'align-self-center', 'text-end')
@@ -192,3 +192,31 @@ const makeBook = (objBook) => {
 
   return container
 }
+
+const searchBook = () => {
+  const upperCaseBook = searchSubmit.value.toUpperCase()
+  const bookItem = document.querySelectorAll('.list-books > .item-book')
+
+  for (let i = 0; i < bookItem.length; i++) {
+    value = bookItem[i].textContent || bookItem[i].innerText
+    if (value.toUpperCase().indexOf(upperCaseBook) > -1) {
+      bookItem[i].style.display = ''
+    } else {
+      bookItem[i].style.display = 'none'
+    }
+  }
+}
+// const searchBook = () => {
+//   const searchBook = document.getElementById('searchBook').value
+//   const bookUpperCase = searchBook.toUpperCase()
+//   const bookItem = document.querySelectorAll('.book-list > .book-item')
+
+//   for (let i = 0; i < bookItem.length; i++) {
+//     bookValue = bookItem[i].textContent || bookItem[i].innerText
+//     if (bookValue.toUpperCase().indexOf(bookUpperCase) > -1) {
+//       bookItem[i].style.display = ''
+//     } else {
+//       bookItem[i].style.display = 'none'
+//     }
+//   }
+// }
