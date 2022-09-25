@@ -23,7 +23,7 @@ document.addEventListener(RENDER_EVENT, () => {
     nullBooks.innerText = 'Add some book to readlist'
     unCompletedBooks.append(nullBooks)
   } else {
-    nullBooks.innerText = 'Go !, complete your readlist'
+    nullBooks.innerText = 'Go ! complete your readlist'
     completedBooks.append(nullBooks)
   }
 })
@@ -99,7 +99,7 @@ const makeBook = (objBook) => {
 
   if (objBook.isComplete) {
     const undo = document.createElement('i')
-    undo.classList.add('fa-solid', 'fa-rotate-left', 'm-2', 'text-warning')
+    undo.classList.add('fa-solid', 'fa-circle-left', 'm-2', 'text-muted')
 
     undo.onclick = () => {
       undoBook(objBook.id)
@@ -119,11 +119,11 @@ const makeBook = (objBook) => {
     buttonContainer.append(undo, trash)
   } else {
     const check = document.createElement('i')
-    check.classList.add('fa-solid', 'fa-check', 'm-2', 'text-success')
-
+    check.classList.add('fa-solid', 'fa-circle-check', 'm-2', 'text-success')
     check.onclick = () => {
       moveToComplete(objBook.id)
     }
+
     const trash = document.createElement('i')
     trash.classList.add('fa-solid', 'fa-circle-minus', 'm-2', 'text-danger')
 
