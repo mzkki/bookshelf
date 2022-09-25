@@ -206,17 +206,3 @@ const searchBook = () => {
     }
   }
 }
-// const searchBook = () => {
-//   const searchBook = document.getElementById('searchBook').value
-//   const bookUpperCase = searchBook.toUpperCase()
-//   const bookItem = document.querySelectorAll('.book-list > .book-item')
-
-//   for (let i = 0; i < bookItem.length; i++) {
-//     bookValue = bookItem[i].textContent || bookItem[i].innerText
-//     if (bookValue.toUpperCase().indexOf(bookUpperCase) > -1) {
-//       bookItem[i].style.display = ''
-//     } else {
-//       bookItem[i].style.display = 'none'
-//     }
-//   }
-// }
